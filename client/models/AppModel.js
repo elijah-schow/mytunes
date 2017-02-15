@@ -12,10 +12,16 @@ var AppModel = Backbone.Model.extend({
     end up referring to the window. That's just what happens with all JS events. The handlers end up
     getting called from the window (unless we override it, as we do here). */
 
-
+    // set the current song when a "play" event is fired
     params.library.on('play', function(song) {
       this.set('currentSong', song);
     }, this);
+
+    // queue the next song when an "enqueue" event is fired
+    params.library.on('enqueue', function(song) {
+      this.get('songQueue').add(song);
+    }, this);
+
   }
 
 });
