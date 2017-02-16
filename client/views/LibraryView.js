@@ -3,7 +3,7 @@ var LibraryView = Backbone.View.extend({
 
   tagName: 'div',
 
-  className: 'column two-thirds library',
+  className: 'column half library',
 
   initialize: function() {
     this.render();

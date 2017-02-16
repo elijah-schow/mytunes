@@ -3,7 +3,7 @@ var SongQueueView = Backbone.View.extend({
 
   tagName: 'div',
 
-  className: 'column third song-queue',
+  className: 'column half song-queue',
 
   initialize: function() {
     this.render();

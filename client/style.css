@@ -66,12 +66,28 @@ table {
   display: table;
 }
 
-.row:after {
+.row:after,
+.media:after {
   clear: both;
 }
 
-.row {
+.row,
+.media {
   *zoom: 1;
+}
+
+.media .object {
+  float:left;
+  margin-right: .75em;
+}
+
+.media .object img {
+  width: 100%;
+}
+
+.media .body {
+  overflow: hidden;
+  _overfow: visible;
 }
 
 /*
@@ -107,17 +123,22 @@ h2 {
 
 .song {
   cursor: pointer;
-  padding: .5em .75em;
-  margin: 0 -0.75em;
+  padding: .5em .5em;
+  margin: 0 -0.5em;
 }
 
 .song:hover {
   background: #333;
 }
 
-.song-artist {
+.song .artist {
   color: #AAA;
   font-size: .875em;
+}
+
+.song .artwork {
+  height: auto;
+  width: 3em;
 }
 
 .playing {
