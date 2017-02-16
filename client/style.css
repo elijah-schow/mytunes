@@ -141,8 +141,13 @@ h2 {
   width: 3em;
 }
 
-.playing {
+.playing,
+.playing:hover {
   background: #1DB955;
+}
+
+.playing .artist {
+  color: #FFF;
 }
 
 /*1DB955*/

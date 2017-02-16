@@ -15,6 +15,9 @@ var SongQueueEntryView = Backbone.View.extend({
     },
 
     render: function() {
+      if(this.model.get('playing')){
+        this.$el.addClass('playing');
+      }
       return this.$el.html(this.template(this.model.attributes));
     }
 
