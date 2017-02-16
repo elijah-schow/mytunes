@@ -8,7 +8,7 @@ var SongQueueView = Backbone.View.extend({
   initialize: function() {
     this.render();
     // re-render when add or remove events fire from the song queue collection
-    this.collection.on('add remove', this.render, this);
+    this.collection.on('add remove play', this.render, this);
   },
 
   render: function() {
