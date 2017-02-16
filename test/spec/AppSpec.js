@@ -32,4 +32,8 @@ describe('App', function() {
     expect(app.get('songQueue').at(0)).to.equal(app.get('library').at(1));
   });
 
+  xit('stops playing the current song if it is dequeued', function() {
+    // TODO: write test
+  });
+
 });

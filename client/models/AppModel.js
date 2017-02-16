@@ -22,6 +22,13 @@ var AppModel = Backbone.Model.extend({
       this.get('songQueue').add(song);
     }, this);
 
+    // stop playing the current song if it is dequeued
+    params.library.on('dequeue', function(song) {
+      if(this.get('currentSong') === song) {
+        song.trigger('ended');
+      }
+    }, this);
+
   }
 
 });
