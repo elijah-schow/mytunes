@@ -3,18 +3,14 @@ var Songs = Backbone.Collection.extend({
 
   model: SongModel,
 
-  initialize: function() {
-    // GET song data from Parse when initialized
-    $.ajax({
-      url: config.server,
-      type: 'GET',
-      success: function(data) {
-        this.set(data.results);
-      }.bind(this),
-      error: function(data){
-        console.error('Failed to Load Song Data:');
-      }
-    });
+  url: 'http://parse.atx.hackreactor.com/mytunes/classes/songs',
+
+  initialize: function(){
+    this.fetch();
+  },
+
+  parse: function(data) {
+    return data.results;
   }
 
 });

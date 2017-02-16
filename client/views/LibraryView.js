@@ -5,6 +5,8 @@ var LibraryView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
+    // re-render with fetched songs
+    this.collection.on('sync', this.render, this);
   },
 
   render: function() {
