@@ -20,7 +20,9 @@ var AppView = Backbone.View.extend({
   render: function() {
     return this.$el.html([
       $('<div class="row"></div>').html(
-        this.playerView.$el
+        $('<div class="column full"></div>').html(
+          this.playerView.$el
+        )
       ),
       $('<div class="row"></div>').html([
         this.libraryView.$el,
